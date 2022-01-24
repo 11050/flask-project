@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}
- Earn
+ trader
 {% endblock %}
-
 {% block content %}
 
 
@@ -10,20 +9,18 @@
         <thead>
             <tr>
                 <!-- Your Columns HERE -->
-              <th scope="col">currency</th>
-              <th scope="col">Cryptocurrency</th>
-              <th scope="col">Stock</th>
-
+                <th scope="col">name</th>
+                <th scope="col">type</th>
+                <th scope="col">type2</th>
 
             </tr>
-
         </thead>
-          {% for boxs in box%}
+          {% for traders in trader %}
         <tr>
 
-            <td>{{boxs.Currency}}</td>
-            <td>{{boxs.Cryptocurrency}}</td>
-            <td>{{boxs.Stock}}</td>
+         <td>{{traders.name}}</td>
+          <td>{{traders.type}}</td>
+           <td>{{traders.type2}}</td>
 
 
         </tr>
@@ -33,24 +30,5 @@
 
         </tbody>
     </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 {% endblock %}
