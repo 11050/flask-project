@@ -1,8 +1,36 @@
- {% extends 'base.html' %}
+{% extends 'base.html' %}
 {% block title %}
-    Home Page
+
+{% endblock %}
+{% block content %}
+my website our
 {% endblock %}
 
-{% block content %}
-    This is our content for the Home Page
-{% endblock %}
+
+ <table class="table table-hover table-dark">
+        <thead>
+            <tr>
+                <!-- Your Columns HERE -->
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Barcode</th>
+                <th scope="col">Price</th>
+                <th scope="col">Options</th>
+            </tr>
+        </thead>
+          {% for item in item2 %}
+        <tr>
+
+            <td>{{item.name}}</td>
+            <td>{{item.surname}}</td>
+            <td>{{item.lastname}}</td>
+
+
+
+        </tr>
+        <tbody>
+        {% endfor %}
+            <!-- Your rows inside the table HERE: -->
+
+        </tbody>
+    </table>

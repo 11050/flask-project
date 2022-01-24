@@ -1,10 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}
+saas
+{% endblock %}
 
-</body>
-</html>
+{% block content %}
+
+<table class="table table-hover table-dark">
+        <thead>
+            <tr>
+                <!-- Your Columns HERE -->
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Surname</th>
+                <th scope="col">Lastname</th>
+                <th scope="col">University</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+          {% for item in item2%}
+        <tr>
+
+            <td>{{item.Name}}</td>
+            <td>{{item.Surname}}</td>
+            <td>{{item.Lastname}}</td>
+            <td>{{item.University}}</td>
+           <td> {{item.Price}}</td>
+          <td>{{item.ID}}</td>
+
+
+        </tr>
+        <tbody>
+        {% endfor %}
+            <!-- Your rows inside the table HERE: -->
+
+        </tbody>
+    </table>
+{% endblock %}
