@@ -1,57 +1,23 @@
 from flask import Flask, render_template
-
-
 app = Flask(__name__)
 
-
 @app.route('/')
+@app.route('/home')
 def home_page():
-    jamol = [
-        {'id': 1, 'name': 'Phone', 'barcode': '893212299897', 'price': 500},
-        {'id': 2, 'name': 'Laptop', 'barcode': '123985473165', 'price': 900},
-        {'id': 3, 'name': 'Keyboard', 'barcode': '231985128446', 'price': 150}
-    ]
-    return render_template('home.html',jamol=jamol)
-
-
-
-
+    return render_template('home.html')
 
 @app.route('/market')
 def market_page():
-    items= [
-        {'id': 1, 'name': 'Phone', 'barcode': '893212299897', 'price': 500},
-        {'id': 2, 'name': 'Laptop', 'barcode': '123985473165', 'price': 900},
-        {'id': 3, 'name': 'Keyboard', 'barcode': '231985128446', 'price': 150},
-        {'id':4,'name':'samsung','barcode':'212112121','price':31}
+    items = [
+        {'id': 1, 'name': 'T-shirt', 'barcode': '893212299897', 'price': 500},
+        {'id': 2, 'name': 'Shoes', 'barcode': '123985473165', 'price': 900},
+        {'id': 3, 'name': 'dress', 'barcode': '231985128446', 'price': 150}
     ]
     return render_template('market.html', items=items)
 
-@app.route('/apple')
-def jamol_say():
-    return f'nima gap'
-
-
-
-
-
-
-
-
-@app.route('/about/<username>')
-
-
-def toliq_ism_yasa(username):
-    return f'<h1>Mani ism {username}Jamollldin</h1>'
-@app.route('/home')
-def say_hello():
-    return '<h1>say JAmol</h1>'
-
-@app.route('/jamol/<username>')
-def say_hellos(username):
-         return f'<p>sajdnasdasn {username}'
-
-@app.route('/name/<fullname>')
-
-def agant(fullname):
-    return f'<p>sadsa{fullname}</p>'
+@app.route('/Order')
+def order_page():
+    return render_template('order.html')
+@app.route('/jamol')
+def buy():
+    return render_template('jamol.html')
